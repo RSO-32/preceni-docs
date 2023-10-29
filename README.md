@@ -40,3 +40,9 @@ Rešitev je narejena z uporabo ogrodja `NestJS` v okolju `Node.js`
   - storitev `preceni-data` shrani podatke o izdelku v bazo podatkov ter shrani slike izdelka
   - storitev `preceni-notify` ugotovi ali gre za spremembo cene izdelka in pošlje obvestilo uporabnikom
 - Rešitev uporabnika obvesti o spremembi cene izdelka
+
+## Zagon
+
+Podatkovna baza: `run --name preceni-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=preceni -p 5432:5432 postgres:16`
+
+Nest: `npm run start:dev`
