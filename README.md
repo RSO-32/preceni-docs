@@ -10,17 +10,17 @@ Preceni je spletni sledilnik cen, namenjen spremljanju in beleženju nihanja cen
 
 Rešitev je sestavljena iz štirih mikrostoritev:
 
-- [`preceni-data`](https://github.com/RSO-32/preceni-data) - dostop do podatkov o izdelkih
+- [`preceni-data`](https://github.com/RSO-32/preceni-data) ([DockerHub](https://hub.docker.com/r/vidvidex/preceni-data)) - dostop do podatkov o izdelkih
   - prikaže trenutno ceno izdelka v različnih spletnih trgovinah
   - omogoča prikaz zgodovine cen izdelka
   - prikaže druge splošne podatke o izdelku (ime, opis, slike, ...)
   - napredno iskanje izdelkov glede na različne kriterije (trgovina, cena, kategorija, ...)
-- [`preceni-scrape`](https://github.com/RSO-32/preceni-scrape) - web scraper za pridobivanje podatkov o izdelkih iz spletnih trgovin
+- [`preceni-scrape`](https://github.com/RSO-32/preceni-scrape) ([DockerHub](https://hub.docker.com/r/vidvidex/preceni-scrape)) - web scraper za pridobivanje podatkov o izdelkih iz spletnih trgovin
   - pridobivanje podatkov iz spletnih trgovin slovenskih trgovcev (Mercator, Tuš, Hofer, Špar, ...)
   - uporablja API, če ta obstaja ali pa web scraping, če API ni na voljo
-- [`preceni-notify`](https://github.com/RSO-32/preceni-notify) - pošiljanje obvestil uporabnikom
+- [`preceni-notify`](https://github.com/RSO-32/preceni-notify) ([DockerHub](https://hub.docker.com/r/vidvidex/preceni-notify)) - pošiljanje obvestil uporabnikom
   - uporabnike prek epošte ali drugih storitev obvesti, ko se cena izdelka spremeni (pade pod določeno mejo)
-- [`preceni-auth`](https://github.com/RSO-32/preceni-auth) - avtentikacija uporabnikov
+- [`preceni-auth`](https://github.com/RSO-32/preceni-auth) ([DockerHub](https://hub.docker.com/r/vidvidex/preceni-auth)) - avtentikacija uporabnikov
   - login, register
   - upravljanje računa
 
