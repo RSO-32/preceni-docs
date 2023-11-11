@@ -24,7 +24,7 @@ Rešitev je sestavljena iz štirih mikrostoritev:
   - login, register
   - upravljanje računa
 
-Rešitev je narejena z uporabo ogrodja `NestJS` v okolju `Node.js`
+Rešitev je narejena z uporabo ogrodja Flask.
 
 ![arhitektura](arhitektura.png)
 
@@ -41,8 +41,15 @@ Rešitev je narejena z uporabo ogrodja `NestJS` v okolju `Node.js`
   - storitev `preceni-notify` ugotovi ali gre za spremembo cene izdelka in pošlje obvestilo uporabnikom
 - Rešitev uporabnika obvesti o spremembi cene izdelka
 
+## Konfiguracija
+Konfiguracija je narejena s pomočjo okoljskih spremenljivk, seznam okoljskih spremenljivk s primeri vrednosti je na voljo v datotekah .env.example v repozitoriju posamezne mikrostoritve.
+Za lepšo preglednost, bi lahko konfiguracijo podali tudi z uporabo konfiguracijske datoteke npr. config.toml.
+
+
 ## Zagon
 
 Podatkovna baza: `run --name preceni-db -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=preceni -p 5432:5432 postgres:16`
 
-Nest: `npm run start:dev`
+Python: python app.py
+
+
