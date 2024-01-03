@@ -131,6 +131,29 @@ Prikaz prijav uporabnikov:
 Delovanje storitve `preceni-scrape`:
 ![](2023-12-26-10-14-43.png)
 
+## Sledenje zahtevkom na več mikrostoritvah
+
+Primer: Ko uporabnik naredi novo naročilo na obvestila o spremembi cene izdelka, mora mikrostoritev `preceni-notify` pri storitvi `preceni-auth` preveriti, če je uporabnik sploh prijavljen.
+
+`preceni-notify`
+
+```txt
+[2024-01-03 19:12:12,548] INFO in app: START: POST /notification [066574ca-f0b0-4157-add4-614fd5b5d62b]
+[2024-01-03 19:12:12,549] INFO in app: Verifying user 1
+[2024-01-03 19:12:12,555] INFO in app: User 1 verified
+[2024-01-03 19:12:12,555] INFO in notification: Creating notification for user 1 when product 1's price is under 1000
+[2024-01-03 19:12:12,572] INFO in app: Notification for product 1 created
+[2024-01-03 19:12:12,572] INFO in app: END: POST /notification [066574ca-f0b0-4157-add4-614fd5b5d62b]
+```
+
+`preceni-auth`
+
+```txt
+[2024-01-03 19:12:12,552] INFO in app: START: GET /user-by-token [066574ca-f0b0-4157-add4-614fd5b5d62b]
+[2024-01-03 19:12:12,553] INFO in app: Valid token [066574ca-f0b0-4157-add4-614fd5b5d62b]
+[2024-01-03 19:12:12,553] INFO in app: END: GET /user-by-token [066574ca-f0b0-4157-add4-614fd5b5d62b]
+```
+
 ## Izolacija in toleranca napak
   <!--Kratek opis demonstracije za izolacijo in toleranco napak, ki ste jo pripravili za vašo aplikacijo.-->
 
