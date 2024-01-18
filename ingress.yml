@@ -1,0 +1,42 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress
+  namespace: default
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: rso-static-ip
+    networking.gke.io/managed-certificates: managed-cert
+    ingressClassName: "gce"
+
+spec:
+  rules:
+    - http:
+        paths:
+        - path: /data
+          pathType: Prefix
+          backend:
+            service:
+              name: preceni-data-lb
+              port:
+                number: 5000
+        - path: /auth
+          pathType: Prefix
+          backend:
+            service:
+              name: preceni-auth-lb
+              port:
+                number: 5001
+        - path: /notify
+          pathType: Prefix
+          backend:
+            service:
+              name: preceni-notify-lb
+              port:
+                number: 5002
+        - path: /scrape
+          pathType: Prefix
+          backend:
+            service:
+              name: preceni-scrape-lb
+              port:
+                number: 5004
